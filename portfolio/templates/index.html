@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Kojo Thompson | Freelancer</title>
+    <meta name="description" content="Web, Desktop and Mobile Apps">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+
+<body id="page-top" style="font-family: 'Open Sans', sans-serif;"><a class="menu-toggle rounded" href="#"><i
+            class="fa fa-bars"></i></a>
+    <nav class="navbar navbar-light navbar-expand" id="sidebar-wrapper">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler d-none" data-target="#"></button>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav sidebar-nav" id="sidebar-nav">
+                    <li class="nav-item sidebar-brand" role="presentation"><a class="nav-link active js-scroll-trigger"
+                            href="#page-top">Brand</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+                            href="#page-top">Home</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+                            href="#about">About</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+                            href="#services">Services</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+                            href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+                            href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="d-flex masthead"
+        style="background-image: url(&quot;static/assets/img/heading.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <div class="container my-auto text-center">
+            {% if messages %}
+                    <div style="display: flex; justify-content: center">
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            {% for message in messages %}
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+            <h1 class="mb-1 animate__animated animate__bounceInLeft animate__slow">Kojo Thompson</h1>
+            <h3 class="mb-5 animate__animated animate__bounceInLeft animate__fast"><em>Freelancer</em></h3><a
+                class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#about">Who I am</a>
+            <div class="overlay"></div>
+        </div>
+    </header>
+    <section id="about" class="content-section bg-light">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2>I am a Javascript enthusiast, building cross platform Web, Mobile and Desktop Apps</h2>
+                    <p class="lead mb-5"><span>React, React Native, Electron, Django, Flask, Flutter</span></p><a
+                        class="btn btn-dark btn-xl js-scroll-trigger" role="button" href="#services">Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="content-section bg-primary text-white text-center">
+        <div class="container">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">What To Expect</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i
+                            class="icon-screen-smartphone"></i></span>
+                    <h4><strong>Responsive</strong></h4>
+                    <p class="mb-0 text-faded">Apps that look great on every screen</p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i
+                            class="icon-pencil"></i></span>
+                    <h4><strong>Test Driven</strong></h4>
+                    <p class="mb-0 text-faded">Apps that have been tested before publishing</p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i
+                            class="icon-like"></i></span>
+                    <h4><strong>WYSIWYG</strong></h4>
+                    <p class="mb-0 text-faded"><span>Get exactly what you ask for, when you want it</span></p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i
+                            class="icon-mustache"></i></span>
+                    <h4><strong>Question</strong></h4>
+                    <p class="mb-0 text-faded">You have any questions? Customers are always right</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="content-section">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h2 class="mb-5">Recent Projects</h2>
+            </div>
+            <div class="row no-gutters">
+                {% if portfolios %}
+                {% for portfolio in portfolios %}
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="{{portfolio.url}}">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <h2>{{ portfolio.name }}</h2>
+                                <p class="mb-0">View Demo</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="{{ portfolio.image }}">
+                    </a>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="{% url 'index' %}">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <h2>No Projects Added Yet</h2>
+                                <p class="mb-0">Watch this space</p>
+                            </div>
+                        </div><img class="img-fluid" src="static/assets/img/portfolio-1.jpg">
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="content-section bg-primary text-white">
+        <h1 class="text-center mb-3">Contact Me</h1>
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col col-md-8">
+                    <form method="POST" action="{% url 'mail' %}">
+                        {% csrf_token %}
+                        <div class="form-group"><input class="form-control" type="text" name="name"
+                                placeholder="eg. Kojo Thompson" style="margin-bottom: 10px;" required><input class="form-control"
+                                type="email" placeholder="eg. mnnlthmpsn@outlook.com" name="email"
+                                style="margin-bottom: 10px;" required>
+                            <textarea class="form-control" name="message" placeholder="Your message here" rows="5"
+                                style="margin-bottom: 10px;" required></textarea><button class="btn btn-dark btn-xl js-scroll-trigger"
+                                type="submit">Send Mail</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer text-center">
+        <div class="container">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">&nbsp;<a class="text-white social-link rounded-circle"
+                        href="https://web.facebook.com/emmanuel.thompson.56481379"><i class="icon-social-facebook"></i></a></li>
+                <li class="list-inline-item">&nbsp;<a class="text-white social-link rounded-circle" href="https://www.instagram.com/kojo_ntiamoah/"><i
+                            class="icon-social-instagram"></i></a></li>
+                <li class="list-inline-item">&nbsp;<a class="text-white social-link rounded-circle" href="https://github.com/mnnlthmpsn/"><i
+                            class="icon-social-github"></i></a></li>
+            </ul>
+            <p class="text-muted mb-0 small">Copyright &nbsp;© Brand 2020</p>
+        </div><a class="js-scroll-trigger scroll-to-top rounded" href="#page-top"><i class="fa fa-angle-up"></i></a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="static/assets/js/script.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>
